@@ -1,4 +1,4 @@
-function Supports() {
+function Sports() {
   'use strict';
 
   return {
@@ -13,14 +13,23 @@ function Supports() {
         return false;
       }
     })(),
+    cando: 'addEventListener' in document,
     fileread: !!(window.File && window.FileReader && window.FileList && window.Blob),
-    fullscreen: !!(document.fullscreenEnabled ||
-                   document.mozFullScreenEnabled ||
-                   document.documentElement.webkitRequestFullScreen),
+    fullscreen: !!(document.fullscreenEnabled || document.mozFullScreenEnabled || document.documentElement.webkitRequestFullScreen),
     standalone: 'standalone' in window.navigator && window.navigator.standalone,
-    classlist: 'classList' in document.documentElement,
-    cando: 'addEventListener' in document
+    classlist: (function() {
+      return 'classList' in document.documentElement;
+    }),
+    online: (function() {
+      return navigator.onLine;
+    }),
+    touch: (function() {
+      return navigator.userAgent.match(/(iphone|ipad|ipod|android)/gi);
+    }),
+    localstorage: (function() {
+      return ('localStorage' in window) && window['localStorage'] !== null;
+    })
   };
 }
 
-module.exports = Supports;
+module.exports = Sports;
