@@ -1,0 +1,47 @@
+{
+  "name": "sports",
+  "version": "0.0.1",
+  "description": "Helps detect features",
+  "author": "sChzs BkgNns <sotirios.bakagiannis@gmail.com> (http://thewhodidthis.com/)",
+  "homepage": "https://github.com/thewhodidthis/sports#readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "clear": "npm run clear:dist && npm run clear:logs",
+    "clear:dist": "rm -rf dist/",
+    "clear:logs": "rm -f *.log",
+    "lint": "(jshint index.js & jscs index.js --reporter=inlinesingle) 2>&1 | tee lint-js.log",
+    "postlint": "find lint-js.log -size 0 -print0 | xargs -0 rm",
+    "start": "npm run build && npm run build:min",
+    "prebuild": "mkdir -p dist/",
+    "build": "browserify index.js -s sports > ./dist/sports.js",
+    "build:min": "browserify index.js -s sports | uglifyjs -o ./dist/sports.min.js",
+    "preversion": "npm run clear:logs"
+  },
+  "config": {
+    "jscsrc": ".jscsrc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thewhodidthis/sports.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thewhodidthis/sports/issues"
+  },
+  "keywords": [
+    "supports",
+    "feature",
+    "detection"
+  ],
+  "engines": {
+    "node": ">=0.11.0",
+    "npm": ">=2.0.0"
+  },
+  "devDependencies": {
+    "jscs": "latest",
+    "jshint": "latest",
+    "uglify-js": "latest",
+    "browserify": "latest"
+  },
+  "license": "Unlicense"
+}
