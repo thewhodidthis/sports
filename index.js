@@ -1,6 +1,6 @@
-function Sports() {
-  'use strict';
+'use strict';
 
+function Sports() {
   return {
 
     // IE11> http://caniuse.com/#feat=webgl
@@ -26,9 +26,18 @@ function Sports() {
     touch: (function() {
       return navigator.userAgent.match(/(iphone|ipad|ipod|android)/gi);
     }),
+    scrollsnap: (function() {
+      return ('scrollSnapType' in document.documentElement.style) || ('webkitScrollSnapType' in document.documentElement.style);
+    }),
     localstorage: (function() {
       return ('localStorage' in window) && window['localStorage'] !== null;
-    })
+    }),
+    isOnline: function() {
+      return navigator.onLine;
+    },
+    isTouchDevice: function() {
+      return navigator.userAgent.match(/(iphone|ipad|ipod|android)/gi);
+    }
   };
 }
 

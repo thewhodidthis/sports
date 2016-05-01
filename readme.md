@@ -1,5 +1,5 @@
 ## Sports
-> Basic feature detection helper
+> Helps detect browser features.
 
 ### Setup
 ```sh
