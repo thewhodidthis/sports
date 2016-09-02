@@ -1,10 +1,20 @@
-'use strict';
-
 function Sports() {
-  return {
+  'use strict';
 
-    // IE11> http://caniuse.com/#feat=webgl
-    webgl: (function() {
+  return {
+    cando: 'addEventListener' in document,
+    classlist: 'classList' in document.documentElement,
+    fileread: !!(window.File && window.FileReader && window.FileList && window.Blob),
+    fullscreen: !!(document.fullscreenEnabled ||
+                   document.mozFullScreenEnabled ||
+                   document.documentElement.webkitRequestFullScreen),
+    localstorage: 'localStorage' in window && window.localStorage !== null,
+    online: navigator.onLine,
+    scrollsnap: ('scrollSnapType' in document.documentElement.style) ||
+                ('webkitScrollSnapType' in document.documentElement.style),
+    standalone: 'standalone' in window.navigator && window.navigator.standalone,
+    touch: !!(navigator.userAgent.match(/(iphone|ipad|ipod|android)/gi)),
+    webgl: (function () {
       try {
         var test = document.createElement('canvas');
 
@@ -13,31 +23,6 @@ function Sports() {
         return false;
       }
     })(),
-    cando: 'addEventListener' in document,
-    fileread: !!(window.File && window.FileReader && window.FileList && window.Blob),
-    fullscreen: !!(document.fullscreenEnabled || document.mozFullScreenEnabled || document.documentElement.webkitRequestFullScreen),
-    standalone: 'standalone' in window.navigator && window.navigator.standalone,
-    classlist: (function() {
-      return 'classList' in document.documentElement;
-    }),
-    online: (function() {
-      return navigator.onLine;
-    }),
-    touch: (function() {
-      return navigator.userAgent.match(/(iphone|ipad|ipod|android)/gi);
-    }),
-    scrollsnap: (function() {
-      return ('scrollSnapType' in document.documentElement.style) || ('webkitScrollSnapType' in document.documentElement.style);
-    }),
-    localstorage: (function() {
-      return ('localStorage' in window) && window['localStorage'] !== null;
-    }),
-    isOnline: function() {
-      return navigator.onLine;
-    },
-    isTouchDevice: function() {
-      return navigator.userAgent.match(/(iphone|ipad|ipod|android)/gi);
-    }
   };
 }
 
