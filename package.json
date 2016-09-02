@@ -1,7 +1,7 @@
 {
   "name": "sports",
   "version": "0.0.1",
-  "description": "Helps detect features",
+  "description": "Helps run checks on browser features",
   "keywords": [
     "supports",
     "feature",
@@ -20,14 +20,13 @@
     "jscsrc": ".jscsrc"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "clear": "npm run clear:dist && npm run clear:logs",
     "clear:dist": "rm -rf dist/",
     "clear:logs": "rm -f *.log",
     "lint": "(jshint index.js & jscs index.js --reporter=inlinesingle) 2>&1 | tee lint-js.log",
     "postlint": "find lint-js.log -size 0 -print0 | xargs -0 rm",
     "start": "npm run build",
-    "watch": "watchify index.js -s sports -o ./dist/sports.js",
     "prebuild": "mkdir -p dist/",
     "build": "browserify index.js -s sports -o ./dist/sports.js",
     "build:min": "browserify index.js -s sports | uglifyjs -o ./dist/sports.min.js",
@@ -38,12 +37,12 @@
     "node": ">=4.2.4",
     "npm": ">=3.5.3"
   },
+  "dependencies": {},
   "devDependencies": {
     "jscs": "latest",
     "jshint": "latest",
     "uglify-js": "latest",
-    "browserify": "latest",
-    "watchify": "latest"
+    "browserify": "latest"
   },
   "author": "sChzs BkgNns <sotirios.bakagiannis@gmail.com> (https://www.thewhodidthis.com)",
   "license": "Unlicense"
