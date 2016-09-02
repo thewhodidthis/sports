@@ -1,5 +1,5 @@
 ## Sports
-> Helps detect browser features.
+> Runs checks on browser features
 
 ### Setup
 ```sh
@@ -8,9 +8,11 @@ npm install sports --save
 
 ### Usage
 ```js
-var sports = require('sports')();
+var supports = require('sports')();
 
-if (sports.cando == false) {
-	return;
+for (var check in supports) {
+
+	// List all checks
+	console.log(check, supports[check]);
 }
 ```
