@@ -29,7 +29,7 @@
     "start": "npm run build",
     "prebuild": "mkdir -p dist/",
     "build": "browserify index.js -s sports -o ./dist/sports.js",
-    "build:min": "browserify index.js -s sports | uglifyjs -o ./dist/sports.min.js",
+    "build:min": "browserify index.js -s sports | uglifyjs -mc -o ./dist/sports.min.js",
     "postbuild": "npm run build:min",
     "preversion": "npm run clear && npm run build"
   },
