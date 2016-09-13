@@ -19,7 +19,13 @@ function Sports() {
                    document.documentElement.webkitRequestFullScreen),
 
     // Supports local storage
-    localstorage: 'localStorage' in window && window.localStorage !== null,
+    localstorage: (function () {
+      try {
+        return 'localStorage' in window && window['localStorage'] !== null;
+      } catch(e){
+        return false;
+      }
+    })(),
 
     // Is connection avaiable
     online: window.navigator.onLine,
