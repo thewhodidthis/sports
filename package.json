@@ -8,6 +8,7 @@
     "supports"
   ],
   "main": "index.js",
+  "module": "index.es",
   "homepage": "https://github.com/thewhodidthis/sports#readme",
   "repository": {
     "type": "git",
@@ -16,22 +17,17 @@
   "bugs": {
     "url": "https://github.com/thewhodidthis/sports/issues"
   },
-  "config": {
-    "jscsrc": ".jscsrc"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "browserify test/*.js | testling -x open",
     "clear": "npm run clear:dist && npm run clear:logs",
     "clear:dist": "rm -rf dist/",
     "clear:logs": "rm -f *.log",
-    "lint": "(jshint index.js & jscs index.js --reporter=inlinesingle) 2>&1 | tee lint-js.log",
-    "postlint": "find lint-js.log -size 0 -print0 | xargs -0 rm",
-    "start": "npm run build",
-    "prebuild": "mkdir -p dist/",
-    "build": "browserify index.js -s sports -o ./dist/sports.js",
-    "build:min": "browserify index.js -s sports | uglifyjs -mc -o ./dist/sports.min.js",
-    "postbuild": "npm run build:min",
-    "preversion": "npm run clear && npm run build"
+    "lint": "eslint index.es; exit 0",
+    "lint:test": "eslint test/index.js; exit 0",
+    "start": "npm run build && npm run build:min",
+    "build": "rollup -c",
+    "build:min": "uglifyjs dist/sports.js -cm > dist/sports.min.js",
+    "preversion": "npm start"
   },
   "engines": {
     "node": ">=4.2.4",
@@ -39,10 +35,18 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "jscs": "latest",
-    "jshint": "latest",
-    "uglify-js": "latest",
-    "browserify": "latest"
+    "babel-eslint": "latest",
+    "babel-plugin-external-helpers": "latest",
+    "babel-preset-es2015": "latest",
+    "browserify": "latest",
+    "eslint": "latest",
+    "eslint-config-airbnb-base": "latest",
+    "eslint-plugin-import": "latest",
+    "rollup": "latest",
+    "rollup-plugin-babel": "latest",
+    "tape": "latest",
+    "testling": "latest",
+    "uglify-js": "latest"
   },
   "author": "sChzs BkgNns <sotirios.bakagiannis@gmail.com> (https://www.thewhodidthis.com)",
   "license": "Unlicense"
