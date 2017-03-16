@@ -3,16 +3,14 @@
 
 ### Setup
 ```sh
-npm install sports --save
+npm install sports
 ```
 
 ### Usage
 ```js
-var supports = require('sports')();
+import * as sports from 'sports';
 
-for (var check in supports) {
-
-	// List all checks
-	console.log(check, supports[check]);
-}
+Object.keys(sports).forEach((check) => {
+  console.log(check, sports[check]);
+});
 ```
