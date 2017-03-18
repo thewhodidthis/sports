@@ -13,7 +13,9 @@ export const scrollsnap = 'scrollSnapType' in html.style || 'webkitScrollSnapTyp
 
 // Looks like a mobile device (side-effects)
 export const touch = !!(win.navigator.userAgent.match(/(iphone|ipad|ipod|android)/gi));
-export const fileread = !!(win.File && win.FileReader && win.FileList && win.Blob);
+
+// https://github.com/Modernizr/Modernizr/blob/master/feature-detects/file/api.js
+export const fileread = !!(win.File && win.FileList && win.FileReader);
 export const fullscreen = !!(doc.fullscreenEnabled || doc.mozFullScreenEnabled || html.webkitRequestFullScreen);
 
 // Side-effects, no tree shaking
