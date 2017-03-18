@@ -3,7 +3,7 @@
 
   var win = window;
   var doc = document;
-  var html = document.documentElement;
+  var html = doc.documentElement;
 
   var online = win.navigator.onLine;
   var classlist = 'classList' in html;
@@ -24,7 +24,7 @@
   // Side-effects, no tree shaking
   var webgl = function () {
     try {
-      var c = document.createElement('canvas');
+      var c = doc.createElement('canvas');
 
       return win.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl'));
     } catch (e) {

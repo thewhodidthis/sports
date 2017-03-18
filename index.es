@@ -1,6 +1,6 @@
 const win = window;
 const doc = document;
-const html = document.documentElement;
+const html = doc.documentElement;
 
 export const online = win.navigator.onLine;
 export const classlist = 'classList' in html;
@@ -21,7 +21,7 @@ export const fullscreen = !!(doc.fullscreenEnabled || doc.mozFullScreenEnabled |
 // Side-effects, no tree shaking
 export const webgl = (() => {
   try {
-    const c = document.createElement('canvas');
+    const c = doc.createElement('canvas');
 
     return win.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl'));
   } catch (e) {
