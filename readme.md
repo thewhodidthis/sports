@@ -1,5 +1,5 @@
 ## Sports
-> Runs checks on browser features
+> Super simple yepnope sub
 
 ### Setup
 ```sh
