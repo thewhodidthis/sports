@@ -4,23 +4,23 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var win = window;
 var doc = document;
-var html = doc.documentElement;
+var htm = doc.documentElement;
 
 var online = win.navigator.onLine;
-var classlist = 'classList' in html;
+var classlist = 'classList' in htm;
 var websocket = 'WebSocket' in win;
 var standalone = 'standalone' in win.navigator && win.navigator.standalone;
 var eventsource = 'EventSource' in win;
 
 // https://www.chromestatus.com/feature/5721832506261504
-var scrollsnap = 'scrollSnapType' in html.style || 'webkitScrollSnapType' in html.style;
+var scrollsnap = 'scrollSnapType' in htm.style || 'webkitScrollSnapType' in htm.style;
 
 // Looks like a mobile device (side-effects)
 var touch = !!win.navigator.userAgent.match(/(iphone|ipad|ipod|android)/gi);
 
 // https://github.com/Modernizr/Modernizr/blob/master/feature-detects/file/api.js
 var fileread = !!(win.File && win.FileList && win.FileReader);
-var fullscreen = !!(doc.fullscreenEnabled || doc.mozFullScreenEnabled || html.webkitRequestFullScreen);
+var fullscreen = !!(doc.fullscreenEnabled || doc.mozFullScreenEnabled || htm.webkitRequestFullScreen);
 
 // Side-effects, no tree shaking
 var webgl = function () {
