@@ -9,11 +9,11 @@ export default {
     {
       format: 'iife',
       moduleName: 'sports',
-      dest: 'dist/sports.js'
+      dest: 'dist/sports.js',
     },
     {
       format: 'cjs',
-      dest: 'index.js'
+      dest: 'index.js',
     }
   ]
 };
