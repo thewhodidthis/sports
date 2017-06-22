@@ -1,39 +1,25 @@
-const win = window;
-const doc = document;
-const htm = doc.documentElement;
+// Server sent events
+export const eventsource = 'EventSource' in window;
 
-export const online = win.navigator.onLine;
-export const classlist = 'classList' in htm;
-export const websocket = 'WebSocket' in win;
-export const standalone = 'standalone' in win.navigator && win.navigator.standalone;
-export const eventsource = 'EventSource' in win;
+// Device motion API
+export const devicemotion = 'DeviceMotionEvent' in window;
+export const deviceorientation = 'DeviceOrientationEvent' in window;
 
-// https://www.chromestatus.com/feature/5721832506261504
-export const scrollsnap = 'scrollSnapType' in htm.style || 'webkitScrollSnapType' in htm.style;
-
-// Looks like a mobile device (side-effects)
-export const touch = !!(win.navigator.userAgent.match(/(iphone|ipad|ipod|android)/gi));
-
+// File API
 // https://github.com/Modernizr/Modernizr/blob/master/feature-detects/file/api.js
-export const fileread = !!(win.File && win.FileList && win.FileReader);
-export const fullscreen = !!(doc.fullscreenEnabled || doc.mozFullScreenEnabled || htm.webkitRequestFullScreen);
+export const filereader = !!(window.File && window.FileList && window.FileReader);
 
-// Side-effects, no tree shaking
-export const webgl = (() => {
-  try {
-    const c = doc.createElement('canvas');
+// Fullscreen API
+// https://developer.mozilla.org/en/API/Fullscreen
+export const fullscreen = !!(document.fullscreenEnabled
+                          || document.mozFullScreenEnabled
+                          || document.documentElement.webkitRequestFullScreen);
 
-    return win.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl'));
-  } catch (e) {
-    return false;
-  }
-})();
+// Connection status
+// https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine
+export const online = window.navigator.onLine;
 
-export const localstorage = (() => {
-  try {
-    return 'localStorage' in win && win.localStorage !== null;
-  } catch (e) {
-    return false;
-  }
-})();
+// Iframes, app mode and such
+// https://www.bennadel.com/blog/1950-detecting-iphone-s-app-mode-full-screen-mode-for-web-applications.htm
+export const standalone = 'standalone' in window.navigator && window.navigator.standalone;
 

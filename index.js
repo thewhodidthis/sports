@@ -2,53 +2,33 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var win = window;
-var doc = document;
-var htm = doc.documentElement;
+// Server sent events
+var eventsource = 'EventSource' in window;
 
-var online = win.navigator.onLine;
-var classlist = 'classList' in htm;
-var websocket = 'WebSocket' in win;
-var standalone = 'standalone' in win.navigator && win.navigator.standalone;
-var eventsource = 'EventSource' in win;
+// Device motion API
+var devicemotion = 'DeviceMotionEvent' in window;
+var deviceorientation = 'DeviceOrientationEvent' in window;
 
-// https://www.chromestatus.com/feature/5721832506261504
-var scrollsnap = 'scrollSnapType' in htm.style || 'webkitScrollSnapType' in htm.style;
-
-// Looks like a mobile device (side-effects)
-var touch = !!win.navigator.userAgent.match(/(iphone|ipad|ipod|android)/gi);
-
+// File API
 // https://github.com/Modernizr/Modernizr/blob/master/feature-detects/file/api.js
-var fileread = !!(win.File && win.FileList && win.FileReader);
-var fullscreen = !!(doc.fullscreenEnabled || doc.mozFullScreenEnabled || htm.webkitRequestFullScreen);
+var filereader = !!(window.File && window.FileList && window.FileReader);
 
-// Side-effects, no tree shaking
-var webgl = function () {
-  try {
-    var c = doc.createElement('canvas');
+// Fullscreen API
+// https://developer.mozilla.org/en/API/Fullscreen
+var fullscreen = !!(document.fullscreenEnabled || document.mozFullScreenEnabled || document.documentElement.webkitRequestFullScreen);
 
-    return win.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl'));
-  } catch (e) {
-    return false;
-  }
-}();
+// Connection status
+// https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine
+var online = window.navigator.onLine;
 
-var localstorage = function () {
-  try {
-    return 'localStorage' in win && win.localStorage !== null;
-  } catch (e) {
-    return false;
-  }
-}();
+// Iframes, app mode and such
+// https://www.bennadel.com/blog/1950-detecting-iphone-s-app-mode-full-screen-mode-for-web-applications.htm
+var standalone = 'standalone' in window.navigator && window.navigator.standalone;
 
-exports.online = online;
-exports.classlist = classlist;
-exports.websocket = websocket;
-exports.standalone = standalone;
 exports.eventsource = eventsource;
-exports.scrollsnap = scrollsnap;
-exports.touch = touch;
-exports.fileread = fileread;
+exports.devicemotion = devicemotion;
+exports.deviceorientation = deviceorientation;
+exports.filereader = filereader;
 exports.fullscreen = fullscreen;
-exports.webgl = webgl;
-exports.localstorage = localstorage;
+exports.online = online;
+exports.standalone = standalone;
