@@ -2,11 +2,6 @@
   "name": "sports",
   "version": "2.0.0",
   "description": "Helps run checks on browser features",
-  "keywords": [
-    "detection",
-    "feature",
-    "supports"
-  ],
   "main": "index.js",
   "module": "index.es",
   "homepage": "https://github.com/thewhodidthis/sports#readme",
@@ -18,9 +13,13 @@
     "url": "https://github.com/thewhodidthis/sports/issues"
   },
   "scripts": {
-    "test": "browserify test/*.js | testling -x open",
-    "lint": "eslint index.es test/*.js",
-    "start": "rollup -c && uglifyjs dist/sports.js -cmo dist/sports.min.js"
+    "pretest": "eslint test.js",
+    "test": "browserify test | kpow",
+    "prestart": "eslint index.es",
+    "start": "rollup -f cjs index.es | buble > index.js"
+  },
+  "eslintConfig": {
+    "extends": "@thewhodidthis"
   },
   "engines": {
     "node": ">=4.2.4",
@@ -28,18 +27,13 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "babel-eslint": "latest",
-    "babel-plugin-external-helpers": "latest",
-    "babel-preset-latest": "latest",
+    "@thewhodidthis/eslint-config": "latest",
     "browserify": "latest",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "latest",
-    "eslint-plugin-import": "latest",
+    "buble": "latest",
+    "eslint": "latest",
+    "kpow": "latest",
     "rollup": "latest",
-    "rollup-plugin-babel": "latest",
-    "tape": "latest",
-    "testling": "latest",
-    "uglify-js": "latest"
+    "tape": "latest"
   },
   "author": "sChzs BkgNns <sotirios.bakagiannis@gmail.com> (https://www.thewhodidthis.com)",
   "license": "Unlicense"
