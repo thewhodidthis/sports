@@ -15,7 +15,9 @@ var filereader = !!(window.File && window.FileList && window.FileReader);
 
 // Fullscreen API
 // https://developer.mozilla.org/en/API/Fullscreen
-var fullscreen = !!(document.fullscreenEnabled || document.mozFullScreenEnabled || document.documentElement.webkitRequestFullScreen);
+var fullscreen = !!(document.fullscreenEnabled
+                          || document.mozFullScreenEnabled
+                          || document.documentElement.webkitRequestFullScreen);
 
 // Connection status
 // https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine
@@ -32,3 +34,4 @@ exports.filereader = filereader;
 exports.fullscreen = fullscreen;
 exports.online = online;
 exports.standalone = standalone;
+
