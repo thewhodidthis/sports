@@ -1,7 +1,10 @@
-require('kpow')()
+'use strict'
 
+const kpow = require('kpow')
 const test = require('tape')
 const supports = require('./')
+
+kpow()
 
 test('will compute', (t) => {
   Object.keys(supports).forEach((check) => {
