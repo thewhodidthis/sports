@@ -17,8 +17,8 @@ export const fullscreen = !!(document.fullscreenEnabled
 
 // Connection status
 // https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine
-export const online = window.navigator.onLine
+export const online = navigator.onLine
 
 // Iframes, app mode and such
 // https://www.bennadel.com/blog/1950-detecting-iphone-s-app-mode-full-screen-mode-for-web-applications.htm
-export const standalone = 'standalone' in window.navigator && window.navigator.standalone
+export const standalone = 'standalone' in navigator && navigator.standalone

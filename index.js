@@ -21,11 +21,11 @@ var fullscreen = !!(document.fullscreenEnabled
 
 // Connection status
 // https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine
-var online = window.navigator.onLine;
+var online = navigator.onLine;
 
 // Iframes, app mode and such
 // https://www.bennadel.com/blog/1950-detecting-iphone-s-app-mode-full-screen-mode-for-web-applications.htm
-var standalone = 'standalone' in window.navigator && window.navigator.standalone;
+var standalone = 'standalone' in navigator && navigator.standalone;
 
 exports.eventsource = eventsource;
 exports.devicemotion = devicemotion;
