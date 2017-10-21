@@ -1,4 +1,3 @@
-## Sports
 > Super simple yepnope sub
 
 ### Setup
