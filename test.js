@@ -1,21 +1,17 @@
-'use strict'
+import 'cutaway'
+import { assert, report } from 'tapeless'
+import * as sports from './index.es'
 
-const kpow = require('kpow')
-const test = require('tape')
-const supports = require('./')
+const { ok, notOk } = assert
 
-kpow()
+Object.keys(sports).forEach((check) => {
+  const result = sports[check]
 
-test('will compute', (t) => {
-  Object.keys(supports).forEach((check) => {
-    const result = supports[check]
-
-    if (result) {
-      t.ok(result, `sports ${check}`)
-    } else {
-      t.notOk(result, `misses ${check}`)
-    }
-  })
-
-  t.end()
+  if (result) {
+    ok(result, `sports ${check}`)
+  } else {
+    notOk(result, `misses ${check}`)
+  }
 })
+
+report()
