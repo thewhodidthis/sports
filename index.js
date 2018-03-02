@@ -3,29 +3,29 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 // Server sent events
-var eventsource = 'EventSource' in window;
+const eventsource = 'EventSource' in window;
 
 // Device motion API
-var devicemotion = 'DeviceMotionEvent' in window;
-var deviceorientation = 'DeviceOrientationEvent' in window;
+const devicemotion = 'DeviceMotionEvent' in window;
+const deviceorientation = 'DeviceOrientationEvent' in window;
 
 // File API
 // https://github.com/Modernizr/Modernizr/blob/master/feature-detects/file/api.js
-var filereader = !!(window.File && window.FileList && window.FileReader);
+const filereader = !!(window.File && window.FileList && window.FileReader);
 
 // Fullscreen API
 // https://developer.mozilla.org/en/API/Fullscreen
-var fullscreen = !!(document.fullscreenEnabled
+const fullscreen = !!(document.fullscreenEnabled
                           || document.mozFullScreenEnabled
                           || document.documentElement.webkitRequestFullScreen);
 
 // Connection status
 // https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine
-var online = navigator.onLine;
+const online = navigator.onLine;
 
 // Iframes, app mode and such
 // https://www.bennadel.com/blog/1950-detecting-iphone-s-app-mode-full-screen-mode-for-web-applications.htm
-var standalone = 'standalone' in navigator && navigator.standalone;
+const standalone = 'standalone' in navigator && navigator.standalone;
 
 exports.eventsource = eventsource;
 exports.devicemotion = devicemotion;
@@ -34,4 +34,3 @@ exports.filereader = filereader;
 exports.fullscreen = fullscreen;
 exports.online = online;
 exports.standalone = standalone;
-
