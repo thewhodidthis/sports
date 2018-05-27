@@ -4,13 +4,13 @@ import * as sports from './index.mjs'
 
 const { ok, notOk } = assert
 
-Object.keys(sports).forEach((check) => {
-  const result = sports[check]
+Object.entries(sports).forEach(([name, check]) => {
+  const result = check()
 
   if (result) {
-    ok(result, `sports ${check}`)
+    ok(result, `sports ${name}`)
   } else {
-    notOk(result, `misses ${check}`)
+    notOk(result, `misses ${name}`)
   }
 })
 
