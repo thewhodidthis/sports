@@ -10,7 +10,7 @@ npm i thewhodidthis/sports
 ```js
 import * as sports from 'sports'
 
-Object.keys(sports).forEach((check) => {
-  console.log(check, sports[check])
+Object.entries(sports).forEach(([feature, check]) => {
+  console.log(feature, check())
 })
 ```
