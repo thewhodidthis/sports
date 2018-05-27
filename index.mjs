@@ -17,8 +17,27 @@ export const fullscreen = !!(document.fullscreenEnabled
 
 // Connection status
 // https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine
-export const online = navigator.onLine
+export const online = 'onLine' in navigator
 
 // Iframes, app mode and such
-// https://www.bennadel.com/blog/1950-detecting-iphone-s-app-mode-full-screen-mode-for-web-applications.htm
+// https://gist.github.com/bennadel/9759788
 export const standalone = 'standalone' in navigator && navigator.standalone
+
+// Service workers
+export const serviceworker = 'serviceWorker' in navigator
+
+// Websockets
+export const websocket = 'WebSocket' in window
+
+// WebGL rendering
+// https://github.com/mrdoob/three.js/blob/master/examples/js/Detector.js
+export const webgl = (() => {
+  try {
+    const canvas = document.createElement('canvas')
+    const target = canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
+
+    return 'WebGLRenderingContext' in window && target
+  } catch (x) {
+    return false
+  }
+})()

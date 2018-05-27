@@ -21,11 +21,30 @@ const fullscreen = !!(document.fullscreenEnabled
 
 // Connection status
 // https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine
-const online = navigator.onLine;
+const online = 'onLine' in navigator;
 
 // Iframes, app mode and such
-// https://www.bennadel.com/blog/1950-detecting-iphone-s-app-mode-full-screen-mode-for-web-applications.htm
+// https://gist.github.com/bennadel/9759788
 const standalone = 'standalone' in navigator && navigator.standalone;
+
+// Service workers
+const serviceworker = 'serviceWorker' in navigator;
+
+// Websockets
+const websocket = 'WebSocket' in window;
+
+// WebGL rendering
+// https://github.com/mrdoob/three.js/blob/master/examples/js/Detector.js
+const webgl = (() => {
+  try {
+    const canvas = document.createElement('canvas');
+    const target = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+
+    return 'WebGLRenderingContext' in window && target
+  } catch (x) {
+    return false
+  }
+})();
 
 exports.eventsource = eventsource;
 exports.devicemotion = devicemotion;
@@ -34,3 +53,6 @@ exports.filereader = filereader;
 exports.fullscreen = fullscreen;
 exports.online = online;
 exports.standalone = standalone;
+exports.serviceworker = serviceworker;
+exports.websocket = websocket;
+exports.webgl = webgl;
