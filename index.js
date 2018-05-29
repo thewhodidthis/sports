@@ -2,6 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+// # Sports
+// Helps detect browser features
+
 // Server sent events
 const eventsource = () => 'EventSource' in window;
 

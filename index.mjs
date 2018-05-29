@@ -1,3 +1,6 @@
+// # Sports
+// Helps detect browser features
+
 // Server sent events
 export const eventsource = () => 'EventSource' in window
 
