@@ -1,6 +1,6 @@
 {
   "name": "sports",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Helps run checks on browser features",
   "main": "index",
   "module": "index.mjs",
