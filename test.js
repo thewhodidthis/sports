@@ -8,9 +8,9 @@ Object.entries(sports).forEach(([name, check]) => {
   const result = check()
 
   if (result) {
-    ok(result, `sports ${name}`)
+    ok.describe(`sports ${name}`).test(result)
   } else {
-    notOk(result, `misses ${name}`)
+    notOk.describe(`misses ${name}`).test(result)
   }
 })
 
