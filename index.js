@@ -49,13 +49,13 @@ const webgl = () => {
   }
 };
 
-exports.eventsource = eventsource;
 exports.devicemotion = devicemotion;
 exports.deviceorientation = deviceorientation;
+exports.eventsource = eventsource;
 exports.filereader = filereader;
 exports.fullscreen = fullscreen;
 exports.online = online;
-exports.standalone = standalone;
 exports.serviceworker = serviceworker;
-exports.websocket = websocket;
+exports.standalone = standalone;
 exports.webgl = webgl;
+exports.websocket = websocket;
