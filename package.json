@@ -2,38 +2,39 @@
   "name": "sports",
   "version": "3.0.3",
   "description": "Helps run checks on browser features",
-  "main": "index",
-  "module": "index.mjs",
   "homepage": "https://github.com/thewhodidthis/sports#readme",
+  "bugs": {
+    "url": "https://github.com/thewhodidthis/sports/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thewhodidthis/sports.git"
   },
-  "bugs": {
-    "url": "https://github.com/thewhodidthis/sports/issues"
-  },
+  "license": "Unlicense",
+  "author": "Sotiri Bakagiannis <sotirios.bakagiannis@gmail.com> (http://thewhodidthis.com)",
+  "main": "index",
+  "module": "index.mjs",
   "scripts": {
-    "pretest": "eslint test.js",
-    "test": "rollup -c -f iife test.js | kpow",
     "prestart": "eslint index.mjs",
-    "start": "rollup -f cjs index.mjs > index.js"
+    "start": "rollup -f cjs -o index.js index.mjs",
+    "pretest": "eslint test.js",
+    "test": "rollup -c -f iife test.js | kpow"
   },
   "eslintConfig": {
     "extends": "@thewhodidthis"
   },
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@thewhodidthis/eslint-config": "^0.0.17",
+    "cutaway": "^0.0.8",
+    "eslint": "^6.8.0",
+    "kpow": "^0.1.4",
+    "rollup": "^1.31.1",
+    "tapeless": "^0.0.10"
+  },
   "engines": {
     "node": ">=4.2.4",
     "npm": ">=3.5.3"
-  },
-  "devDependencies": {
-    "@rollup/plugin-node-resolve": "^7.1.1",
-    "@thewhodidthis/eslint-config": "^0.0.11",
-    "cutaway": "^0.0.7",
-    "eslint": "^6.8.0",
-    "kpow": "^0.1.4",
-    "rollup": "^1.31.0",
-    "tapeless": "^0.0.7"
-  },
-  "author": "sChzs BkgNns <sotirios.bakagiannis@gmail.com> (https://www.thewhodidthis.com)",
-  "license": "Unlicense"
+  }
 }
