@@ -1,12 +1,31 @@
-> Super simple yepnope sub
+## about
 
-### Setup
+Helps detect browser features.
+
+## setup
+
+Fetch the latest version from GitHub directly:
+
 ```sh
-# Fetch latest from github
-npm i thewhodidthis/sports
+# Contains named exports for a range of newer browser features
+npm install thewhodidthis/sports
 ```
 
-### Usage
+## usage
+
+Do I have the [EventSource API](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) available on this browser?
+
+```js
+import { eventsource } form 'sports'
+
+// Implicitly tries 'EventSource' in window
+if (eventsource()) {
+  console.log('Fortunately yes')
+}
+```
+
+What checks are available in total?
+
 ```js
 import * as sports from 'sports'
 
