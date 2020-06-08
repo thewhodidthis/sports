@@ -24,7 +24,7 @@ if (eventsource()) {
 }
 ```
 
-What checks are available in total?
+What checks and features are available in all?
 
 ```js
 import * as sports from 'sports'
