@@ -16,7 +16,7 @@ npm install thewhodidthis/sports
 Do I have the [EventSource API](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) available on this browser?
 
 ```js
-import { eventsource } form 'sports'
+import { eventsource } from 'sports'
 
 // Implicitly tries 'EventSource' in window
 if (eventsource()) {
