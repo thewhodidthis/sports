@@ -4,7 +4,7 @@ Helps detect browser features.
 
 ## setup
 
-Fetch the latest version from GitHub directly:
+Download the [latest stable version](https://npm.im/sports) from the _npm_ registry:
 
 ```sh
 # Contains named exports for a range of newer browser features
@@ -18,7 +18,7 @@ Do I have the [EventSource API](https://developer.mozilla.org/en-US/docs/Web/API
 ```js
 import { eventsource } from 'sports'
 
-// Implicitly tries 'EventSource' in window
+// Implicitly tries `'EventSource' in window`
 if (eventsource()) {
   console.log('Fortunately yes')
 }
