@@ -8,7 +8,7 @@ Find the [latest version](https://npm.im/sports) on the _npm_ registry:
 
 ```sh
 # Contains named exports for a range of newer browser features
-npm install @thewhodidthis/sports
+npm install sports
 ```
 
 ## usage
