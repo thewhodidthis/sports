@@ -27,6 +27,7 @@
   "eslintConfig": {
     "extends": "@thewhodidthis"
   },
+  "dependencies": {},
   "devDependencies": {
     "@thewhodidthis/eslint-config": "^0.1.7",
     "cutaway": "^0.0.11",
