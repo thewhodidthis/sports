@@ -35,7 +35,7 @@
     "kpow": "^0.1.8",
     "rollup": "^2.18.0",
     "rollup-config-x": "^3.0.0",
-    "tapeless": "^1.0.2"
+    "tapeless": "^1.0.3"
   },
   "engines": {
     "node": ">=12.18.1",
