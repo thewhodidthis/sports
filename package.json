@@ -12,29 +12,32 @@
   },
   "license": "Unlicense",
   "author": "Sotiri Bakagiannis <sotirios.bakagiannis@gmail.com> (http://thewhodidthis.com)",
+  "type": "module",
+  "exports": {
+    "import": "./index.js",
+    "require": "./index.cjs"
+  },
   "main": "index",
-  "module": "index.mjs",
   "scripts": {
-    "prestart": "eslint index.mjs",
-    "start": "rollup -f cjs -o index.js index.mjs",
+    "prestart": "eslint index.js",
+    "start": "rollup -f cjs -o index.cjs index.js",
     "pretest": "eslint test.js",
     "test": "rollup -c node:x -f iife test.js | kpow"
   },
   "eslintConfig": {
     "extends": "@thewhodidthis"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@thewhodidthis/eslint-config": "^0.1.6",
+    "@thewhodidthis/eslint-config": "^0.1.7",
     "cutaway": "^0.0.11",
-    "eslint": "^7.2.0",
+    "eslint": "^7.3.1",
     "kpow": "^0.1.8",
-    "rollup": "^2.17.0",
-    "rollup-config-x": "^2.0.3",
-    "tapeless": "^0.0.11"
+    "rollup": "^2.18.0",
+    "rollup-config-x": "^3.0.0",
+    "tapeless": "^1.0.2"
   },
   "engines": {
-    "node": ">=4.2.4",
-    "npm": ">=3.5.3"
+    "node": ">=12.18.1",
+    "npm": ">=6.14.5"
   }
 }
