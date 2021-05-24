@@ -13,32 +13,25 @@
   "license": "Unlicense",
   "author": "Sotiri Bakagiannis <sotirios.bakagiannis@gmail.com> (http://thewhodidthis.com)",
   "type": "module",
-  "exports": {
-    "import": "./index.js",
-    "require": "./index.cjs"
-  },
-  "main": "index",
+  "exports": "./main.js",
+  "main": "./main.js",
   "scripts": {
-    "prestart": "eslint index.js",
-    "start": "rollup -f cjs -o index.cjs index.js",
     "pretest": "eslint test.js",
-    "test": "rollup -c node:x -f iife test.js | kpow"
+    "test": "esbuild --bundle test.js | kpow"
   },
   "eslintConfig": {
     "extends": "@thewhodidthis"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@thewhodidthis/eslint-config": "^0.1.7",
-    "cutaway": "^0.0.11",
-    "eslint": "^7.3.1",
-    "kpow": "^0.1.8",
-    "rollup": "^2.18.0",
-    "rollup-config-x": "^3.0.0",
-    "tapeless": "^1.0.3"
+    "@thewhodidthis/eslint-config": "^1.0.2",
+    "cutaway": "^1.0.3",
+    "esbuild": "^0.12.1",
+    "eslint": "^7.27.0",
+    "kpow": "^1.0.1",
+    "tapeless": "1.0.4"
   },
   "engines": {
-    "node": ">=12.18.1",
-    "npm": ">=6.14.5"
+    "node": ">=14.17.0",
+    "npm": ">=6.14.13"
   }
 }
