@@ -1,6 +1,6 @@
-import 'cutaway'
-import { assert, report } from 'tapeless/browser'
-import * as sports from './main.js'
+import "cutaway"
+import { assert, report } from "tapeless/browser"
+import * as sports from "./main.js"
 
 const { ok, notOk } = assert
 
