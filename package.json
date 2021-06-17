@@ -16,17 +16,11 @@
   "exports": "./main.js",
   "main": "./main.js",
   "scripts": {
-    "pretest": "eslint test.js",
     "test": "esbuild --bundle test.js | kpow"
   },
-  "eslintConfig": {
-    "extends": "@thewhodidthis"
-  },
   "devDependencies": {
-    "@thewhodidthis/eslint-config": "^1.0.2",
     "cutaway": "^1.0.3",
     "esbuild": "^0.12.1",
-    "eslint": "^7.27.0",
     "kpow": "^1.0.1",
     "tapeless": "1.0.4"
   },
