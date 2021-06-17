@@ -16,18 +16,18 @@ npm install sports
 Do I have the [EventSource API](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) available on this browser?
 
 ```js
-import { eventsource } from 'sports'
+import { eventsource } from "sports"
 
 // Implicitly tries `'EventSource' in window`
 if (eventsource()) {
-  console.log('Fortunately yes')
+  console.log("Fortunately yes")
 }
 ```
 
 What checks and features are available in all?
 
 ```js
-import * as sports from 'sports'
+import * as sports from "sports"
 
 Object.entries(sports).forEach(([feature, check]) => {
   console.log(feature, check())
