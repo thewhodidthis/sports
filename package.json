@@ -19,10 +19,10 @@
     "test": "esbuild --bundle test.js | kpow"
   },
   "devDependencies": {
-    "cutaway": "^1.0.3",
-    "esbuild": "^0.12.1",
-    "kpow": "^1.0.1",
-    "tapeless": "1.0.4"
+    "cutaway": "^1.0.9",
+    "esbuild": "^0.12.9",
+    "kpow": "^2.0.3",
+    "tapeless": "1.0.5"
   },
   "engines": {
     "node": ">=14.17.0",
