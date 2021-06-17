@@ -4,7 +4,7 @@ Helps detect browser features.
 
 ## setup
 
-Find the [latest version](https://npm.im/sports) on the _npm_ registry:
+Download from the _npm_ registry:
 
 ```sh
 # Contains named exports for a range of newer browser features
