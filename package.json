@@ -21,7 +21,7 @@
   "devDependencies": {
     "cutaway": "^1.0.9",
     "esbuild": "^0.12.9",
-    "kpow": "^2.0.3",
+    "kpow": "^3.0.0",
     "tapeless": "1.0.5"
   },
   "engines": {
