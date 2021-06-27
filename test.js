@@ -1,5 +1,5 @@
 import "cutaway"
-import { assert, report } from "tapeless/browser"
+import { assert, report } from "tapeless"
 import * as sports from "./main.js"
 
 const { ok, notOk } = assert

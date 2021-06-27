@@ -20,9 +20,9 @@
   },
   "devDependencies": {
     "cutaway": "^1.0.9",
-    "esbuild": "^0.12.9",
-    "kpow": "^3.0.0",
-    "tapeless": "1.0.5"
+    "esbuild": "^0.12.10",
+    "kpow": "^3.0.1",
+    "tapeless": "2.0.0"
   },
   "engines": {
     "node": ">=14.17.0",
