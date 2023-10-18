@@ -25,12 +25,16 @@ export const fullscreen = () =>
 // https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine/
 export const online = () => "onLine" in navigator
 
-// Iframes, app mode and such
-// https://gist.github.com/bennadel/9759788/
-export const standalone = () => "standalone" in navigator && navigator.standalone
+// Popover API
+// https://developer.mozilla.org/en-US/docs/Web/API/Popover_API
+export const popover = () => HTMLElement.prototype.hasOwnProperty("popover")
 
 // Service workers
 export const serviceworker = () => "serviceWorker" in navigator
+
+// Iframes, app mode and such
+// https://gist.github.com/bennadel/9759788/
+export const standalone = () => "standalone" in navigator && navigator.standalone
 
 // User agent data: `brands`, `mobile`, and `platform`
 // https://web.dev/user-agent-client-hints/

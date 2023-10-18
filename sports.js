@@ -28,12 +28,16 @@ var sports = (function(exports) {
   // https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine/
   const online = () => "onLine" in navigator
 
-  // Iframes, app mode and such
-  // https://gist.github.com/bennadel/9759788/
-  const standalone = () => "standalone" in navigator && navigator.standalone
+  // Popover API
+  // https://developer.mozilla.org/en-US/docs/Web/API/Popover_API
+  const popover = () => HTMLElement.prototype.hasOwnProperty("popover")
 
   // Service workers
   const serviceworker = () => "serviceWorker" in navigator
+
+  // Iframes, app mode and such
+  // https://gist.github.com/bennadel/9759788/
+  const standalone = () => "standalone" in navigator && navigator.standalone
 
   // User agent data: `brands`, `mobile`, and `platform`
   // https://web.dev/user-agent-client-hints/
@@ -65,6 +69,7 @@ var sports = (function(exports) {
   exports.filereader = filereader
   exports.fullscreen = fullscreen
   exports.online = online
+  exports.popover = popover
   exports.serviceworker = serviceworker
   exports.standalone = standalone
   exports.useragentdata = useragentdata
