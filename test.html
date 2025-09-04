@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>sports.js</title>
+    <script src="sports.js"></script>
+    <script type="module">
+      import "https://thewhodidthis.github.io/cutaway/main.js"
+      import { assert, report } from "https://thewhodidthis.github.io/tapeless/main.js"
+
+      const { ok, notOk } = assert
+
+      Object.entries(sports).forEach(([name, check]) => {
+        const result = check()
+
+        if (result) {
+          ok.describe(`sports ${name}`).test(result)
+        } else {
+          notOk.describe(`misses ${name}`).test(result)
+        }
+      })
+
+      report()
+    </script>
+  </head>
+  <body></body>
+</html>
